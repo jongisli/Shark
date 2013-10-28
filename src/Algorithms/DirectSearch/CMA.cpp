@@ -273,7 +273,6 @@ void CMA::updateStrategyParameters( const std::vector<TypedIndividual<RealVector
 * \brief Executes one iteration of the algorithm.
 */
 void CMA::step(ObjectiveFunctionType const& function){
-        
         m_generation++;
 
 	std::vector< TypedIndividual<RealVector, RealVector> > offspring( m_lambda );
