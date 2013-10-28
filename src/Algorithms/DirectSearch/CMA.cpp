@@ -178,6 +178,8 @@ void CMA::write( OutArchive & archive ) const {
 
 void CMA::init( ObjectiveFunctionType const& function, SearchPointType const& p) {
 	unsigned int lambda = CMA::suggestLambda( p.size() );
+	std::cout << "WHAT" << std::endl;
+	std::cout << "p " << p << std::endl;
 	init( p.size(),
 		lambda,
 		CMA::suggestMu(  lambda, m_chromosome.m_recombinationType ),
@@ -202,6 +204,10 @@ void CMA::init(
 	m_lambda = lambda;
 	m_mu = mu;
 	m_chromosome.m_sigma = initialSigma;
+
+	std::cout << "m_lambda " << m_lambda << std::endl;
+	std::cout << "m_mu " << m_mu << std::endl;
+	std::cout << "m_chromosome.m_sigma " << m_chromosome.m_sigma << std::endl;
 
 	shark::cma::Initializer initializer;
 	initializer( m_chromosome,
