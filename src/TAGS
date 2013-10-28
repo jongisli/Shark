@@ -1,0 +1,687 @@
+
+Algorithms/CARTTrainer.cpp,735
+void CARTTrainer::train(17,369
+void CARTTrainer::train(65,2084
+void CARTTrainer::pruneMatrix(113,3990
+std::size_t CARTTrainer::findNode(138,4968
+void CARTTrainer::pruneNode(150,5290
+void CARTTrainer::measureStrenght(164,5708
+CARTTrainer::SplitMatrixType CARTTrainer::buildTree(195,6727
+RealVector CARTTrainer::hist(282,10193
+CARTTrainer::SplitMatrixType CARTTrainer::buildTree(300,10723
+RealVector CARTTrainer::mean(421,14538
+double CARTTrainer::totalSumOfSquares(432,14781
+void CARTTrainer::splitAttributeTables(453,15478
+double CARTTrainer::gini(481,16427
+CARTTrainer::AttributeTables CARTTrainer::createAttributeTables(496,16903
+boost::unordered_map<std::size_t, std::size_t> CARTTrainer::createCountMatrix(514,17580
+
+Algorithms/DirectSearch/CMA.cpp,896
+cma::Chromosome::Chromosome(55,2004
+void cma::Chromosome::setDimension(71,2323
+	struct FitnessComparator ::FitnessComparator84,2662
+		bool operator()(::FitnessComparator::operator()86,2722
+	struct IdentityExtractor ::IdentityExtractor91,2913
+		const T & operator()(::IdentityExtractor::operator()93,2964
+	struct PointExtractor ::PointExtractor98,3035
+		const RealVector & operator()(::PointExtractor::operator()100,3083
+	struct StepExtractor ::StepExtractor105,3164
+		const RealVector & operator()(::StepExtractor::operator()107,3211
+	double chi(::chi112,3309
+	double h(::h117,3460
+unsigned CMA::suggestLambda(126,3723
+unsigned CMA::suggestMu(136,4091
+CMA::CMA(152,4557
+void CMA::configure(159,4682
+void CMA::read(164,5019
+void CMA::write(171,5161
+void CMA::init(179,5312
+void CMA::init(191,5634
+void CMA::updateStrategyParameters(221,6359
+void CMA::step(268,8570
+
+Algorithms/DirectSearch/CMSA.cpp,501
+	struct FitnessComparator ::FitnessComparator53,1881
+		bool operator()(::FitnessComparator::operator()55,1941
+	struct IdentityExtractor ::IdentityExtractor60,2129
+		const T & operator()(::IdentityExtractor::operator()62,2180
+	struct PointExtractor ::PointExtractor67,2248
+		const RealVector & operator()(::PointExtractor::operator()69,2296
+void CMSA::init(76,2377
+void CMSA::step(94,2941
+void CMSA::updateStrategyParameters(122,4337
+void CMSA::read(151,5415
+void CMSA::write(157,5557
+
+Algorithms/FisherLDA.cpp,260
+FisherLDA::FisherLDA(44,1496
+void FisherLDA::train(49,1626
+void FisherLDA::meanAndScatter(79,2672
+	typedef LabeledData<RealVector,unsigned int>::const_element_range const_element_range99,3298
+	typedef boost::range_reference<Elements>::type type100,3375
+
+Algorithms/GLPK.cpp,9380
+#define snprintf 54,2007
+namespace shark 57,2042
+namespace glpk shark::glpk58,2060
+#define xmalloc(61,2079
+#define xcalloc(62,2110
+#define xfree(63,2153
+#define GLP_LONG_DEFINED66,2208
+struct glp_long shark::glpk::glp_long67,2233
+void xerror(shark::glpk::xerror71,2303
+void xerror(75,2364
+void xerror(84,2571
+void xerror(93,2780
+void xerror(102,2999
+void xerror(111,3230
+#define xassert(121,3474
+glp_long xtime(124,3536
+double xdifftime(125,3604
+#define DMP_BLK_SIZE 130,3694
+struct DMP133,3787
+#define dmp_create_pool 151,4474
+#define dmp_get_atom 155,4581
+#define dmp_free_atom 159,4707
+#define dmp_in_use 163,4843
+#define dmp_delete_pool 167,4959
+#define align_datasize(176,5121
+DMP *dmp_create_pool(dmp_create_pool180,5241
+void *dmp_get_atom(dmp_get_atom191,5518
+void dmp_free_atom(229,6908
+glp_long dmp_in_use(251,7818
+void dmp_delete_pool(256,7887
+#define GLP_MIN 272,8182
+#define GLP_MAX 273,8231
+#define GLP_FR 276,8326
+#define GLP_LO 277,8376
+#define GLP_UP 278,8438
+#define GLP_DB 279,8500
+#define GLP_FX 280,8560
+#define GLP_BS 283,8659
+#define GLP_NL 284,8710
+#define GLP_NU 285,8780
+#define GLP_NF 286,8850
+#define GLP_NS 287,8910
+#define GLP_UNDEF 290,8995
+#define GLP_FEAS 291,9053
+#define GLP_INFEAS 292,9110
+#define GLP_NOFEAS 293,9169
+#define GLP_OPT 294,9233
+#define GLP_UNBND 295,9289
+#define GLP_ON 298,9375
+#define GLP_OFF 299,9428
+#define GLP_EBADB 302,9503
+#define GLP_ESING 303,9553
+#define GLP_ECOND 304,9605
+#define GLP_EBOUND 305,9664
+#define GLP_EFAIL 306,9715
+#define GLP_EOBJLL 307,9765
+#define GLP_EOBJUL 308,9831
+#define GLP_EITLIM 309,9897
+#define GLP_ETMLIM 310,9958
+#define GLP_ENOPFS 311,10014
+#define GLP_ENODFS 312,10078
+#define GLP_EROOT 313,10140
+#define GLP_ESTOP 314,10205
+#define GLP_EMIPGAP 315,10274
+#define GLP_ENOFEAS 316,10345
+#define GLP_ENOCVG 317,10414
+#define GLP_EINSTAB 318,10465
+#define GLP_EDATA 319,10523
+#define GLP_ERANGE 320,10572
+#define GLP_CV 323,10664
+#define GLP_IV 324,10720
+#define GLP_BV 325,10773
+struct glp_bfcp327,10826
+#define GLP_BF_FT 331,10996
+#define GLP_BF_BG 332,11053
+#define GLP_BF_GR 333,11124
+struct glp_smcp347,11721
+#define GLP_MSG_OFF 350,11834
+#define GLP_MSG_ERR 351,11880
+#define GLP_MSG_ON 352,11948
+#define GLP_MSG_ALL 353,11998
+#define GLP_MSG_DBG 354,12046
+#define GLP_PRIMAL 356,12154
+#define GLP_DUALP 357,12209
+#define GLP_DUAL 358,12279
+#define GLP_PT_STD 360,12387
+#define GLP_PT_PSE 361,12447
+#define GLP_RT_STD 363,12565
+#define GLP_RT_HAR 364,12621
+struct LUF383,13321
+#define LUF_ESING 592,24533
+#define LUF_ECOND 593,24579
+#define luf_create_it 595,24633
+#define luf_defrag_sva 599,24731
+#define luf_enlarge_row 603,24846
+#define luf_enlarge_col 607,24966
+#define luf_factorize 611,25089
+#define luf_f_solve 616,25272
+#define luf_v_solve 620,25397
+#define luf_a_solve 624,25522
+#define luf_delete_it 628,25647
+#define N_MAX 639,25845
+LUF *luf_create_it(luf_create_it642,25930
+void luf_defrag_sva(677,27019
+int luf_enlarge_row(738,29017
+int luf_enlarge_col(801,31239
+void reallocate(864,33483
+int initialize(924,36500
+int find_pivot(1112,43304
+int eliminate(1308,52082
+int build_v_cols(1635,65210
+int build_f_rows(1711,67948
+int luf_factorize(1771,70043
+void luf_f_solve(1886,74585
+void luf_v_solve(1928,75793
+void luf_a_solve(1976,77285
+void luf_delete_it(1992,77729
+struct SCF2030,79279
+#define SCF_TBG 2045,79873
+#define SCF_TGR 2046,79929
+#define SCF_ESING 2057,80318
+#define SCF_ELIMIT 2058,80364
+#define scf_create_it 2060,80416
+#define scf_update_exp 2064,80533
+#define scf_solve_it 2069,80701
+#define scf_reset_it 2073,80840
+#define scf_delete_it 2077,80954
+#define eps 2085,81119
+SCF *scf_create_it(scf_create_it2087,81138
+int f_loc(2104,81734
+int u_loc(2111,81909
+void bg_transform(2118,82086
+void givens(2169,84216
+void gr_transform(2180,84544
+void transform(2225,86258
+int estimate_rank(2239,86565
+int scf_update_exp(2250,86854
+void solve(2300,88577
+void tsolve(2328,89298
+void scf_solve_it(2357,90170
+void scf_reset_it(2367,90390
+void scf_delete_it(2373,90516
+#undef eps2382,90664
+struct LPF2389,90726
+#define LPF_ESING 2467,94477
+#define LPF_ECOND 2468,94523
+#define LPF_ELIMIT 2469,94576
+#define lpf_create_it 2471,94628
+#define lpf_factorize 2475,94732
+#define lpf_ftran 2480,94938
+#define lpf_btran 2484,95070
+#define lpf_update_it 2488,95204
+#define lpf_delete_it 2493,95378
+#define M_MAX 2503,95581
+LPF *lpf_create_it(lpf_create_it2506,95663
+int lpf_factorize(2529,96245
+void r_prod(2601,99099
+void rt_prod(2621,99657
+void s_prod(2642,100238
+void st_prod(2663,100815
+void lpf_ftran(2683,101375
+void lpf_btran(2714,102305
+void enlarge_sva(2746,103246
+int lpf_update_it(2764,103857
+void lpf_delete_it(2881,107947
+struct FHV2906,108764
+#define FHV_ESING 2961,111281
+#define FHV_ECOND 2962,111327
+#define FHV_ECHECK 2963,111380
+#define FHV_ELIMIT 2964,111432
+#define FHV_EROOM 2965,111483
+#define fhv_create_it 2967,111527
+#define fhv_factorize 2971,111631
+#define fhv_h_solve 2976,111820
+#define fhv_ftran 2980,111945
+#define fhv_btran 2984,112077
+#define fhv_update_it 2988,112211
+#define fhv_delete_it 2993,112377
+#define M_MAX 3004,112581
+FHV *fhv_create_it(fhv_create_it3007,112663
+int fhv_factorize(3024,113094
+void fhv_h_solve(3079,115126
+void fhv_ftran(3117,116255
+void fhv_btran(3135,116831
+int fhv_update_it(3153,117411
+void fhv_delete_it(3456,129261
+#define BFD_ESING 3475,129783
+#define BFD_ECOND 3476,129829
+#define BFD_ECHECK 3477,129882
+#define BFD_ELIMIT 3478,129934
+#define BFD_EROOM 3479,129985
+struct BFD3481,130029
+#define bfd_create_it 3511,131074
+#define bfd_set_parm 3515,131178
+#define bfd_factorize 3519,131320
+#define bfd_ftran 3524,131526
+#define bfd_btran 3528,131658
+#define bfd_update_it 3532,131792
+#define bfd_get_count 3537,131966
+#define bfd_delete_it 3541,132080
+#define GLP_PROB_MAGIC 3555,132292
+struct GLPROW3557,132327
+struct GLPCOL3612,134634
+struct GLPAIJ3670,137157
+struct glp_prob3688,137781
+BFD *bfd_create_it(bfd_create_it3795,142131
+void bfd_set_parm(3817,142637
+int bfd_factorize(3835,143221
+void bfd_ftran(3937,146466
+void bfd_btran(3949,146743
+int bfd_update_it(3961,147020
+int bfd_get_count(4017,148597
+void bfd_delete_it(4024,148759
+#define spx_primal 4039,149018
+struct csa4041,149054
+const double kappa 4253,159632
+csa *alloc_csa(alloc_csa4255,159660
+void init_csa(4296,161515
+int inv_col(4402,164757
+int invert_B(4430,165698
+int update_B(4437,165868
+void error_ftran(4468,166803
+void refine_ftran(4500,167820
+void error_btran(4515,168312
+void refine_btran(4545,169216
+void alloc_N(4560,169709
+void add_N_col(4592,170786
+void del_N_col(4623,171678
+void build_N(4661,172933
+double get_xN(4682,173558
+void eval_beta(4710,174325
+void eval_pi(4751,175649
+double eval_cost(4769,176176
+void eval_bbar(4795,176890
+void eval_cbar(4800,176974
+void reset_refsp(4816,177331
+double eval_gamma(4834,177791
+void chuzc(4873,178936
+void eval_tcol(4915,180267
+void refine_tcol(4955,181456
+void sort_tcol(4994,182621
+void chuzr(5026,183528
+void eval_rho(5231,192412
+void refine_rho(5246,192785
+void eval_trow(5260,193147
+void update_bbar(5297,194287
+double reeval_cost(5324,195163
+void update_cbar(5342,195641
+void update_gamma(5365,196357
+double err_in_bbar(5440,198909
+double err_in_cbar(5456,199319
+double err_in_gamma(5476,199861
+void change_basis(5495,200341
+int set_aux_obj(5527,201183
+void set_orig_obj(5570,202520
+int check_stab(5584,202858
+int check_feas(5628,204515
+double eval_obj(5656,205455
+void display(5680,206112
+void store_sol(5719,207501
+void free_thecsa(5803,210081
+int spx_primal(5834,210875
+#define NNZ_MAX 6190,223563
+void create_prob(6193,223677
+glp_prob *glp_create_prob(glp_create_prob6228,224648
+void glp_set_obj_dir(6235,224792
+int glp_add_rows(6244,225009
+int glp_add_cols(6296,226710
+void glp_set_row_bnds(6342,228240
+void glp_set_col_bnds(6378,229446
+void glp_set_obj_coef(6414,230658
+void glp_load_matrix(6425,230931
+void glp_erase_prob(6528,234896
+void delete_prob(6535,234995
+void glp_delete_prob(6545,235272
+int glp_bf_exists(6557,235414
+static int b_col(6563,235521
+int glp_factorize(6594,236467
+int glp_bf_updated(6662,238224
+void glp_get_bfcp(6670,238456
+void copy_bfcp(6690,238977
+void glp_set_bfcp(6697,239126
+void glp_init_smcp(6744,241263
+int solve_lp(6762,241738
+int glp_simplex(6786,242281
+void glp_set_row_stat(6821,243415
+void glp_set_col_stat(6848,244410
+double glp_get_col_prim(6875,245408
+LP::LP(6894,245805
+LP::~LP(6897,245868
+void LP::setMinimize(6901,245915
+void LP::setMaximize(6904,245983
+void LP::addRows(6907,246051
+void LP::addColumns(6910,246126
+void LP::setObjectiveCoefficient(6913,246204
+void LP::setRowFree(6916,246318
+void LP::setRowLowerBounded(6919,246416
+void LP::setRowUpperBounded(6922,246538
+void LP::setRowDoubleBounded(6925,246660
+void LP::setRowFixed(6928,246799
+void LP::setColumnFree(6931,246916
+void LP::setColumnLowerBounded(6934,247017
+void LP::setColumnUpperBounded(6937,247142
+void LP::setColumnDoubleBounded(6940,247267
+void LP::setColumnFixed(6943,247409
+void LP::setConstraintMatrix(6946,247529
+void LP::setRowStatus(6953,247883
+void LP::setColumnStatus(6958,248003
+bool LP::solve(6963,248126
+double LP::solution(6969,248212
+
+Algorithms/GradientDescent/AbstractLineSearchOptimizer.cpp,312
+AbstractLineSearchOptimizer::AbstractLineSearchOptimizer(40,1367
+void AbstractLineSearchOptimizer::init(45,1504
+void AbstractLineSearchOptimizer::step(67,2233
+void AbstractLineSearchOptimizer::configure(78,2611
+void AbstractLineSearchOptimizer::read(86,2843
+void AbstractLineSearchOptimizer::write(98,3130
+
+Algorithms/GradientDescent/BFGS.cpp,124
+void BFGS::initModel(40,1344
+void BFGS::computeSearchDirection(48,1507
+void BFGS::read(77,2126
+void BFGS::write(83,2236
+
+Algorithms/GradientDescent/CG.cpp,116
+void CG::initModel(41,1285
+void CG::computeSearchDirection(44,1324
+void CG::read(72,2099
+void CG::write(78,2205
+
+Algorithms/GradientDescent/IRLS.cpp,70
+IRLS::IRLS(42,1293
+void IRLS::init(50,1502
+void IRLS::step(60,1822
+
+Algorithms/GradientDescent/LBFGS.cpp,194
+void LBFGS::initModel(41,1433
+void LBFGS::computeSearchDirection(48,1614
+void LBFGS::read(58,1860
+void LBFGS::write(67,2042
+void LBFGS::updateHist(76,2233
+void LBFGS::getDirection(92,2717
+
+Algorithms/GradientDescent/Quickprop.cpp,434
+Quickprop::Quickprop(40,1292
+void Quickprop::configure(47,1438
+void Quickprop::read(52,1589
+void Quickprop::write(63,1811
+void Quickprop::init(74,2041
+void Quickprop::step(87,2460
+QuickpropOriginal::QuickpropOriginal(118,3458
+void QuickpropOriginal::configure(125,3616
+void QuickpropOriginal::read(130,3775
+void QuickpropOriginal::write(141,4005
+void QuickpropOriginal::init(152,4243
+void QuickpropOriginal::step(166,4697
+
+Algorithms/GradientDescent/Rprop.cpp,820
+RpropMinus::RpropMinus(49,1436
+void RpropMinus::init(59,1636
+void RpropMinus::init(62,1794
+void RpropMinus::init(79,2299
+void RpropMinus::step(97,2785
+void RpropMinus::configure(125,3574
+void RpropMinus::read(132,3813
+void RpropMinus::write(145,4084
+RpropPlus::RpropPlus(161,4378
+void RpropPlus::init(165,4406
+void RpropPlus::init(168,4563
+void RpropPlus::init(174,4809
+void RpropPlus::step(183,5072
+void RpropPlus::read(216,6124
+void RpropPlus::write(222,6257
+IRpropPlus::IRpropPlus(231,6413
+void IRpropPlus::init(237,6503
+void IRpropPlus::init(240,6661
+void IRpropPlus::init(246,7050
+void IRpropPlus::step(253,7340
+void IRpropPlus::read(292,8498
+void IRpropPlus::write(296,8632
+void IRpropPlus::setDerivativeThreshold(301,8775
+IRpropMinus::IRpropMinus(309,8914
+void IRpropMinus::step(313,8946
+
+Algorithms/KMeans.cpp,115
+std::size_t shark::kMeans(46,1537
+	typedef ClassificationDataset::const_element_reference ConstReference;61,2161
+
+Algorithms/LDA.cpp,125
+void LDA::train(42,1411
+	typedef LabeledData<RealVector,unsigned int>::const_batch_reference const_batch_reference46,1603
+
+Algorithms/LinearRegression.cpp,181
+LinearRegression::LinearRegression(43,1471
+void LinearRegression::train(47,1569
+	typedef LabeledData<RealVector, RealVector>::const_batch_reference const_batch_reference61,2231
+
+Algorithms/NoisyRprop.cpp,156
+NoisyRprop::NoisyRprop(42,1426
+void NoisyRprop::init(46,1497
+void NoisyRprop::init(50,1655
+void NoisyRprop::init(57,1937
+void NoisyRprop::step(94,3228
+
+Algorithms/PCA.cpp,83
+void PCA::setData(31,1131
+void PCA::encoder(110,4307
+void PCA::decoder(128,4880
+
+Algorithms/RFTrainer.cpp,791
+RFTrainer::RFTrainer(38,1270
+void RFTrainer::setDefaults(47,1429
+void RFTrainer::train(73,1820
+void RFTrainer::train(124,3432
+void RFTrainer::setMTry(163,4894
+void RFTrainer::setNTrees(167,4955
+void RFTrainer::setNodeSize(171,5020
+void RFTrainer::setOOBratio(175,5098
+RFClassifier::SplitMatrixType RFTrainer::buildTree(181,5167
+RealVector RFTrainer::hist(290,8441
+RFClassifier::SplitMatrixType RFTrainer::buildTree(310,8995
+RealVector RFTrainer::average(443,12896
+double RFTrainer::totalSumOfSquares(451,13096
+void RFTrainer::splitAttributeTables(472,13781
+void RFTrainer::generateRandomTableIndicies(499,14591
+double RFTrainer::gini(509,15011
+void RFTrainer::createAttributeTables(525,15531
+void RFTrainer::createCountMatrix(547,16182
+bool RFTrainer::tableSort(554,16452
+
+Algorithms/SigmoidFit.cpp,304
+SigmoidFitRpropNLL::SigmoidFitRpropNLL(48,1649
+void SigmoidFitRpropNLL::train(53,1804
+void SigmoidFitPlatt::train(68,2331
+	typedef LabeledData<RealVector, unsigned int>::const_element_range const_element_range70,2483
+	typedef IndexedIterator<boost::range_iterator<Elements>::type> Iterator;71,2561
+
+Core/Oracle.cpp,514
+#define ANNOUNCE_ORACLE(34,1125
+namespace shark 42,1472
+	class Oracle shark::Oracle45,1514
+		virtual ~Oracle(shark::Oracle::~Oracle47,1539
+	class OracleOfDelphi shark::OracleOfDelphi52,1635
+		unsigned int answer(shark::OracleOfDelphi::answer54,1684
+	class HitchhikersGuideToTheGalaxy shark::HitchhikersGuideToTheGalaxy58,1762
+		unsigned int answer(shark::HitchhikersGuideToTheGalaxy::answer60,1824
+	typedef Factory< Oracle, std::string > OracleFactory;shark::OracleFactory64,1955
+int main(75,2195
+
+Core/Version.cpp,18
+int main(31,1042
+
+Data/Csv.cpp,717
+inline std::vector<T> importCSVReaderSingleValue(::importCSVReaderSingleValue45,1501
+inline std::vector<std::vector<double> > importCSVReaderSingleValues(68,2102
+typedef std::pair<int,int102,2862
+typedef std::pair<int, std::vector<double > > CsvPoint;102,2862
+inline std::vector<CsvPoint> import_csv_reader_points(103,2918
+	typedef std::string::const_iterator Iterator;109,3076
+void csvStringToDataImpl(176,4919
+void shark::csvStringToData(208,5860
+void shark::csvStringToData(242,6978
+void shark::csvStringToData(252,7210
+void shark::csvStringToData(262,7451
+void shark::csvStringToData(272,7686
+void shark::csvStringToData(332,9786
+void shark::import_csv(382,11584
+void shark::import_csv(402,12081
+
+Data/LibSVM.cpp,430
+typedef std::pair<int, std::vector<std::pair<std::size_t, double> > > LibSVMPoint;::LibSVMPoint33,1092
+import_libsvm_reader(::import_libsvm_reader35,1208
+shark::LabeledData<T, unsigned int> libsvm_importer(63,2049
+		typedef typename shark::LabeledData<shark::LabeledData123,4072
+void shark::import_libsvm(141,4708
+void shark::import_libsvm(149,4894
+void shark::import_libsvm(158,5101
+void shark::import_libsvm(168,5407
+
+Models/Centroids.cpp,628
+Centroids::Centroids(34,1076
+Centroids::Centroids(39,1145
+Centroids::Centroids(44,1298
+RealVector Centroids::parameterVector(51,1426
+void Centroids::setParameterVector(57,1582
+std::size_t Centroids::numberOfParameters(62,1762
+std::size_t Centroids::numberOfClusters(67,1932
+void Centroids::read(71,2024
+void Centroids::write(75,2093
+RealVector Centroids::softMembership(79,2170
+RealMatrix Centroids::softMembership(97,2862
+double Centroids::membershipKernel(117,3689
+void Centroids::initFromData(121,3795
+	typedef ClassificationDataset::const_element_range Elements;133,4500
+void Centroids::initFromData(154,5295
+
+Models/CMAC.cpp,345
+std::size_t CMACMap::getArrayIndexForTiling(41,1408
+std::vector<std::size_t> CMACMap::getIndizes(58,2063
+CMACMap::CMACMap(68,2353
+void CMACMap::setStructure(71,2434
+void CMACMap::setStructure(79,2823
+void CMACMap::eval(124,4342
+void CMACMap::weightedParameterDerivative(151,5349
+void CMACMap::read(174,6068
+void CMACMap::write(185,6320
+
+Models/Converter.cpp,548
+ThresholdConverter::ThresholdConverter(43,1389
+RealVector ThresholdConverter::parameterVector(48,1477
+void ThresholdConverter::setParameterVector(52,1560
+std::size_t ThresholdConverter::numberOfParameters(56,1755
+void ThresholdConverter::eval(60,1831
+ThresholdVectorConverter::ThresholdVectorConverter(69,2217
+RealVector ThresholdVectorConverter::parameterVector(74,2317
+void ThresholdVectorConverter::setParameterVector(78,2405
+std::size_t ThresholdVectorConverter::numberOfParameters(82,2612
+void ThresholdVectorConverter::eval(86,2694
+
+Models/KalmanFilter.cpp,236
+KalmanFilter::KalmanFilter(42,1425
+void KalmanFilter::eval(46,1498
+void KalmanFilter::setStateVector(51,1628
+void KalmanFilter::setStateErrorCov(56,1745
+void KalmanFilter::predict(61,1897
+void KalmanFilter::updateEstimate(72,2381
+
+Models/LinearNorm.cpp,275
+LinearNorm::LinearNorm(40,1384
+LinearNorm::LinearNorm(45,1514
+void LinearNorm::configure(54,1784
+void LinearNorm::eval(58,1891
+void LinearNorm::eval(66,2210
+void LinearNorm::weightedInputDerivative(77,2627
+void LinearNorm::read(93,3315
+void LinearNorm::write(98,3390
+
+Models/OnlineRNNet.cpp,121
+OnlineRNNet::OnlineRNNet(38,1185
+void OnlineRNNet::eval(44,1425
+void OnlineRNNet::weightedParameterDerivative(83,2812
+
+Models/RBFNet.cpp,478
+RBFNet::RBFNet(41,1310
+RBFNet::RBFNet(46,1476
+void RBFNet::configure(53,1717
+void RBFNet::setStructure(65,2230
+RealVector RBFNet::parameterVector(74,2528
+void RBFNet::setParameterVector(96,3101
+std::size_t RBFNet::numberOfParameters(119,3734
+void RBFNet::computeGaussianResponses(132,4042
+void RBFNet::eval(146,4598
+void RBFNet::weightedParameterDerivative(159,5138
+void RBFNet::setTrainingParameters(249,9283
+void RBFNet::read(255,9429
+void RBFNet::write(269,9707
+
+Models/RecurrentStructure.cpp,521
+RecurrentStructure::RecurrentStructure(44,1309
+RealVector RecurrentStructure::parameterVector(48,1437
+void RecurrentStructure::setParameterVector(63,1841
+void RecurrentStructure::setWeights(78,2276
+void RecurrentStructure::setStructure(82,2363
+void RecurrentStructure::setStructure(105,3141
+void RecurrentStructure::read(118,3540
+void RecurrentStructure::write(130,3867
+void RecurrentStructure::configure(137,4077
+double RecurrentStructure::neuron(163,5021
+double RecurrentStructure::neuronDerivative(176,5276
+
+Models/RNNet.cpp,75
+void RNNet::eval(37,1172
+void RNNet::weightedParameterDerivative(82,3056
+
+Models/SigmoidModel.cpp,846
+SigmoidModel::SigmoidModel(46,1503
+RealVector SigmoidModel::parameterVector(57,1844
+void SigmoidModel::setParameterVector(69,2131
+void SigmoidModel::setOffsetActivity(87,2570
+double SigmoidModel::sigmoid(93,2718
+double SigmoidModel::sigmoidDerivative(97,2802
+void SigmoidModel::eval(101,2883
+void SigmoidModel::eval(111,3446
+void SigmoidModel::weightedParameterDerivative(118,3696
+void SigmoidModel::weightedInputDerivative(141,4513
+void SigmoidModel::read(158,5204
+void SigmoidModel::write(164,5359
+void SigmoidModel::setMinLogValue(169,5469
+SimpleSigmoidModel::SimpleSigmoidModel(178,5649
+double SimpleSigmoidModel::sigmoid(181,5775
+double SimpleSigmoidModel::sigmoidDerivative(184,5873
+TanhSigmoidModel::TanhSigmoidModel(192,6051
+double TanhSigmoidModel::sigmoid(195,6173
+double TanhSigmoidModel::sigmoidDerivative(199,6255
+
+Models/Softmax.cpp,263
+Softmax::Softmax(30,1030
+Softmax::Softmax(35,1168
+void Softmax::eval(40,1277
+void Softmax::eval(51,1584
+void Softmax::weightedParameterDerivative(58,1831
+void Softmax::weightedInputDerivative(67,2169
+void Softmax::read(87,2918
+void Softmax::write(92,3042
+
+ObjectiveFunctions/DiscreteLoss.cpp,163
+DiscreteLoss::DiscreteLoss(40,1379
+double DiscreteLoss::eval(46,1482
+void DiscreteLoss::defineCostMatrix(57,1892
+void DiscreteLoss::defineBalancedCost(70,2225
+
+ObjectiveFunctions/Loss/NegativeClassificationLogLikelihood.cpp,277
+NegativeClassificationLogLikelihood::NegativeClassificationLogLikelihood(43,1567
+double NegativeClassificationLogLikelihood::evalErrorBinary(51,1851
+double NegativeClassificationLogLikelihood::eval(69,2445
+double NegativeClassificationLogLikelihood::evalDerivative(95,3206
+
+ObjectiveFunctions/ROC.cpp,94
+double ROC::threshold(45,1600
+double ROC::value(59,2154
+double ROC::equalErrorRate(77,2767
+
+SharkDefs.cpp,0

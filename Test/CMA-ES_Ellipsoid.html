@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript">
+</script>
+<script src="js/highcharts.js" type="text/javascript">
+</script>
+<script src="js/modules/exporting.js" type="text/javascript">
+</script>
+<script src="js/themes/gray.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var chart1; // globally available
+										$(document).ready(function() {
+											chart1 = new Highcharts.Chart({
+												chart: {
+													renderTo: 'chart-container-1',
+													defaultSeriesType: 'bar',
+													zoomType: 'xy'
+												},
+												title: {
+													text: 'CMA-ES on Ellipsoid'
+												},
+												xAxis: {
+													title: {
+														text: ''
+													}
+												},
+												yAxis: {
+													title: {
+														text: ''
+													}
+												},
+												series: [
+													{ name: 'Trial 0', type: 'line', data: [[0,0.565884],[100,7.69514e-05],]},{ name: 'Trial 1', type: 'line', data: [[0,0.0710297],[100,9.2062e-05],]},{ name: 'Trial 2', type: 'line', data: [[0,0.330226],[100,0.000954899],[200,2.2374e-10],]},{ name: 'Trial 3', type: 'line', data: [[0,0.491311],[100,1.32646e-06],]},{ name: 'Trial 4', type: 'line', data: [[0,0.0677894],[100,0.00014323],]},{ name: 'Trial 5', type: 'line', data: [[0,0.221485],[100,4.68e-06],]},{ name: 'Trial 6', type: 'line', data: [[0,0.58447],[100,0.00136617],[200,4.38606e-10],]},{ name: 'Trial 7', type: 'line', data: [[0,0.138559],[100,0.000131855],]},{ name: 'Trial 8', type: 'line', data: [[0,0.568677],[100,1.42906e-05],]},{ name: 'Trial 9', type: 'line', data: [[0,1.11135],[100,0.000782282],[200,3.46952e-09],]}
+													]
+												});
+											});
+</script>
+</head>
+<body>
+<div id="chart-container-1"></div>
+</body>
+</html>

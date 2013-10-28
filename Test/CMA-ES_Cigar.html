@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript">
+</script>
+<script src="js/highcharts.js" type="text/javascript">
+</script>
+<script src="js/modules/exporting.js" type="text/javascript">
+</script>
+<script src="js/themes/gray.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var chart1; // globally available
+										$(document).ready(function() {
+											chart1 = new Highcharts.Chart({
+												chart: {
+													renderTo: 'chart-container-1',
+													defaultSeriesType: 'bar',
+													zoomType: 'xy'
+												},
+												title: {
+													text: 'CMA-ES on Cigar'
+												},
+												xAxis: {
+													title: {
+														text: ''
+													}
+												},
+												yAxis: {
+													title: {
+														text: ''
+													}
+												},
+												series: [
+													{ name: 'Trial 0', type: 'line', data: [[0,0.00269353],[100,1.08826e-07],]},{ name: 'Trial 1', type: 'line', data: [[0,0.13267],[100,1.9474e-09],]},{ name: 'Trial 2', type: 'line', data: [[0,0.879253],[100,2.20198e-07],]},{ name: 'Trial 3', type: 'line', data: [[0,0.0120347],[100,3.62562e-09],]},{ name: 'Trial 4', type: 'line', data: [[0,0.00549002],[100,7.93965e-06],]},{ name: 'Trial 5', type: 'line', data: [[0,0.010835],[100,6.03068e-08],]},{ name: 'Trial 6', type: 'line', data: [[0,0.177439],[100,7.93472e-07],]},{ name: 'Trial 7', type: 'line', data: [[0,0.17167],[100,1.50783e-09],]},{ name: 'Trial 8', type: 'line', data: [[0,0.137824],[100,1.6396e-07],]},{ name: 'Trial 9', type: 'line', data: [[0,0.276296],[100,7.19229e-10],]}
+													]
+												});
+											});
+</script>
+</head>
+<body>
+<div id="chart-container-1"></div>
+</body>
+</html>

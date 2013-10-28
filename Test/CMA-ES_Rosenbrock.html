@@ -1,0 +1,43 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript">
+</script>
+<script src="js/highcharts.js" type="text/javascript">
+</script>
+<script src="js/modules/exporting.js" type="text/javascript">
+</script>
+<script src="js/themes/gray.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+var chart1; // globally available
+										$(document).ready(function() {
+											chart1 = new Highcharts.Chart({
+												chart: {
+													renderTo: 'chart-container-1',
+													defaultSeriesType: 'bar',
+													zoomType: 'xy'
+												},
+												title: {
+													text: 'CMA-ES on Rosenbrock'
+												},
+												xAxis: {
+													title: {
+														text: ''
+													}
+												},
+												yAxis: {
+													title: {
+														text: ''
+													}
+												},
+												series: [
+													{ name: 'Trial 0', type: 'line', data: [[0,24.7236],[100,0.0729649],]},{ name: 'Trial 1', type: 'line', data: [[0,169.578],[100,0.173715],[200,3.60159e-08],]},{ name: 'Trial 2', type: 'line', data: [[0,51.1723],[100,0.199637],[200,1.29588e-08],]},{ name: 'Trial 3', type: 'line', data: [[0,42.3362],[100,0.0107475],[200,7.65656e-09],]},{ name: 'Trial 4', type: 'line', data: [[0,31.7585],[100,0.352392],[200,2.14129e-06],]},{ name: 'Trial 5', type: 'line', data: [[0,17.5397],[100,0.10633],[200,2.91542e-08],]},{ name: 'Trial 6', type: 'line', data: [[0,30.6615],[100,0.52502],[200,0.000123711],]},{ name: 'Trial 7', type: 'line', data: [[0,4.64945],[100,0.111706],[200,5.43864e-09],]},{ name: 'Trial 8', type: 'line', data: [[0,24.1965],[100,0.720149],[200,2.72925e-05],]},{ name: 'Trial 9', type: 'line', data: [[0,38.1013],[100,0.0315043],[200,1.23991e-09],]}
+													]
+												});
+											});
+</script>
+</head>
+<body>
+<div id="chart-container-1"></div>
+</body>
+</html>
