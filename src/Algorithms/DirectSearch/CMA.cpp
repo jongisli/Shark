@@ -62,7 +62,7 @@ cma::Chromosome::Chromosome( unsigned int dimension) : m_recombinationType( SUPE
 	m_cSigmaU( 0 ),
 	m_dSigma( 0 ),
 	m_muEff( 0 ),
-	m_cMu( 0 ) { //treat as c_{mu} 
+	m_cMu( 0 ) { 
 }
 
 /**
@@ -238,13 +238,13 @@ void CMA::updateStrategyParameters( const std::vector<TypedIndividual<RealVector
 		m_chromosome.m_sigma = 1E-20 / std::sqrt( std::fabs( ev ) );
 
 	if (sum / std::sqrt(1-pow(1-m_chromosome.m_cSigma,2*(m_generation+1))) < (1.4 + (2 / (m_numberOfVariables + 1))) * chi(m_numberOfVariables)) {
-	    m_chromosome.m_hSigma = 1; //m_cCU is h_{sigma}
+	    m_chromosome.m_hSigma = 1;
 	}
 	else {
 	    m_chromosome.m_hSigma = 0;
 	}
 	
-	std::cout << "H:" << m_chromosome.m_hSigma << std::endl;
+	double deltahSigma = (1 - m_chromosome.m_hSigma) * m_chromosome.m_cC * (2 - m_chromosome.m_cC);
 	
 	// Covariance Matrix Update
 	m_chromosome.m_evolutionPathC = (1. - m_chromosome.m_cC ) * m_chromosome.m_evolutionPathC 
@@ -254,8 +254,8 @@ void CMA::updateStrategyParameters( const std::vector<TypedIndividual<RealVector
 
 	RealMatrix C( m_chromosome.m_mutationDistribution.covarianceMatrix() );
 	// Rank-1-Update
-	C = (1. - m_chromosome.m_cOne - m_chromosome.m_cMu) * C +
-		m_chromosome.m_cOne * blas::outer_prod( m_chromosome.m_evolutionPathC, m_chromosome.m_evolutionPathC );
+	C = (1. - m_chromosome.m_cOne - m_chromosome.m_cMu) * C + 
+	  m_chromosome.m_cOne * (blas::outer_prod( m_chromosome.m_evolutionPathC, m_chromosome.m_evolutionPathC ) + deltahSigma * C);
 	// Rank-mu-Update
 	for( unsigned int i = 0; i < m_mu; i++ ) {
 		Z += m_chromosome.m_weights( i ) * blas::outer_prod(
@@ -263,7 +263,7 @@ void CMA::updateStrategyParameters( const std::vector<TypedIndividual<RealVector
 			*offspring[i] - m_chromosome.m_mean
 		);
 	}
-	C += m_chromosome.m_cOne * (1.-1./m_chromosome.m_cMu) * 1./sqr( m_chromosome.m_sigma ) * Z;
+	C += m_chromosome.m_cMu * Z;
 	m_chromosome.m_mutationDistribution.setCovarianceMatrix( C );
 
 	m_chromosome.m_mean = xPrime;
