@@ -107,7 +107,6 @@ struct Initializer {
 		individual.m_cOne = 1. / individual.m_cMu * 2. / sqr(numberOfVariables + ::sqrt(2.)) +
 		        (1 - 1. / individual.m_cMu) * std::min(1., (2 * individual.m_muEff - 1) / (sqr(numberOfVariables + 2) + individual.m_muEff));
 
-		individual.m_cCU = ::sqrt((2 - individual.m_cC) * individual.m_cC);
 		individual.m_cSigmaU = ::sqrt((2 - individual.m_cSigma) * individual.m_cSigma);
 
 		if (variances) {
