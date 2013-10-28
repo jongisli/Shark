@@ -99,7 +99,7 @@ namespace shark {
 				archive & m_sigma;
 
 				archive & m_cC;
-				archive & m_cCU;
+				archive & m_hSigma;
 				archive & m_cOne;
 				archive & m_cSigma;
 				archive & m_cSigmaU;
@@ -124,7 +124,7 @@ namespace shark {
 			void print( Stream & s ) const {
 				s << "sigma: " << m_sigma << std::endl;
 				s << "cc: " << m_cC << std::endl;
-				s << "ccu: " << m_cCU << std::endl;
+				s << "hsigma: " << m_hSigma << std::endl;
 				s << "cone: " << m_cOne << std::endl;
 				s << "csigma: " << m_cSigma << std::endl;
 				s << "csigmaU: " << m_cSigmaU << std::endl;
@@ -143,7 +143,7 @@ namespace shark {
 
 			double m_sigma;
 			double m_cC; 
-			double m_cCU; 
+			double m_hSigma; 
 			double m_cOne;
 			double m_cSigma;
 			double m_cSigmaU;

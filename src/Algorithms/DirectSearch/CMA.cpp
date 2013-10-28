@@ -56,7 +56,7 @@ cma::Chromosome::Chromosome( unsigned int dimension) : m_recombinationType( SUPE
 	m_updateType( RANK_ONE_AND_MU ),
 	m_sigma( 0 ),
 	m_cC( 0 ),
-	m_cCU( 0 ),
+	m_hSigma( 0 ),
 	m_cOne( 0 ),
 	m_cSigma( 0 ),
 	m_cSigmaU( 0 ),
@@ -238,24 +238,24 @@ void CMA::updateStrategyParameters( const std::vector<TypedIndividual<RealVector
 		m_chromosome.m_sigma = 1E-20 / std::sqrt( std::fabs( ev ) );
 
 	if (sum / std::sqrt(1-pow(1-m_chromosome.m_cSigma,2*(m_generation+1))) < (1.4 + (2 / (m_numberOfVariables + 1))) * chi(m_numberOfVariables)) {
-	    m_chromosome.m_cCU = 1; //m_cCU is h_{sigma}
+	    m_chromosome.m_hSigma = 1; //m_cCU is h_{sigma}
 	}
 	else {
-	    m_chromosome.m_cCU = 0;
+	    m_chromosome.m_hSigma = 0;
 	}
 	
-	std::cout << "H:" << m_chromosome.m_cCU << std::endl;
+	std::cout << "H:" << m_chromosome.m_hSigma << std::endl;
 	
 	// Covariance Matrix Update
 	m_chromosome.m_evolutionPathC = (1. - m_chromosome.m_cC ) * m_chromosome.m_evolutionPathC 
-	  + m_chromosome.m_cCU * std::sqrt( m_chromosome.m_cC*(2-m_chromosome.m_cC)*m_chromosome.m_muEff )  / m_chromosome.m_sigma * (xPrime-m_chromosome.m_mean);
+	  + m_chromosome.m_hSigma * std::sqrt( m_chromosome.m_cC*(2-m_chromosome.m_cC)*m_chromosome.m_muEff )  / m_chromosome.m_sigma * (xPrime-m_chromosome.m_mean);
 
 	RealMatrix Z = blas::zero_matrix<double>( m_numberOfVariables, m_numberOfVariables );
 
 	RealMatrix C( m_chromosome.m_mutationDistribution.covarianceMatrix() );
 	// Rank-1-Update
-	C = (1.-m_chromosome.m_cOne) * C +
-		m_chromosome.m_cOne / m_chromosome.m_cMu * blas::outer_prod( m_chromosome.m_evolutionPathC, m_chromosome.m_evolutionPathC );
+	C = (1. - m_chromosome.m_cOne - m_chromosome.m_cMu) * C +
+		m_chromosome.m_cOne * blas::outer_prod( m_chromosome.m_evolutionPathC, m_chromosome.m_evolutionPathC );
 	// Rank-mu-Update
 	for( unsigned int i = 0; i < m_mu; i++ ) {
 		Z += m_chromosome.m_weights( i ) * blas::outer_prod(
@@ -273,6 +273,7 @@ void CMA::updateStrategyParameters( const std::vector<TypedIndividual<RealVector
 * \brief Executes one iteration of the algorithm.
 */
 void CMA::step(ObjectiveFunctionType const& function){
+
         m_generation++;
 
 	std::vector< TypedIndividual<RealVector, RealVector> > offspring( m_lambda );
