@@ -24,22 +24,6 @@ boost/lambda/lambda.hpp
 boost/math/special_functions.hpp
 -
 
-/Users/jonegilsson/Shark/src/Algorithms/DirectSearch/CMSA.cpp
-shark/Algorithms/DirectSearch/CMSA.h
--
-shark/Core/Exception.h
--
-shark/Algorithms/DirectSearch/Operators/Evaluation/PenalizingEvaluator.h
--
-shark/Algorithms/DirectSearch/Operators/Initializers/CovarianceMatrixInitializer.h
--
-shark/Algorithms/DirectSearch/Operators/Recombination/GlobalIntermediateRecombination.h
--
-boost/lambda/lambda.hpp
--
-boost/math/special_functions.hpp
--
-
 /opt/local/include/boost/algorithm/string/config.hpp
 boost/config.hpp
 -
@@ -16500,18 +16484,6 @@ shark/Core/SearchSpaces/VectorSpace.h
 shark/Statistics/Distributions/MultiVariateNormalDistribution.h
 -
 shark/Algorithms/DirectSearch/TypedIndividual.h
--
-
-include/shark/Algorithms/DirectSearch/CMSA.h
-shark/Algorithms/AbstractOptimizer.h
--
-shark/Algorithms/AbstractSingleObjectiveOptimizer.h
--
-shark/Algorithms/DirectSearch/TypedIndividual.h
--
-shark/Core/SearchSpaces/VectorSpace.h
--
-shark/Statistics/Distributions/MultiVariateNormalDistribution.h
 -
 
 include/shark/Algorithms/DirectSearch/EA.h

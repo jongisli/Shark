@@ -337,6 +337,13 @@ namespace shark {
 		}
 
 		/**
+		 * \brief Returns a mutable reference to the generation number \f$g\f$.
+		 */
+		unsigned int & generation(){
+			return m_generation;
+		}
+
+		/**
 		 * \brief Returns eigenvectors of covariance matrix (not considering step size)
 		 */
 		RealMatrix const& eigenVectors() const {
