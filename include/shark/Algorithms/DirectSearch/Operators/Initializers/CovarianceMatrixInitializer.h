@@ -55,8 +55,7 @@ struct Initializer {
 
 
 		individual.m_sigma = sigma;
-		std::cout << "m_sigma " << individual.m_sigma << std::endl;
-
+		
 		individual.setDimension(numberOfVariables);
 		individual.m_weights.resize(mu);
 		switch (individual.m_recombinationType) {
@@ -77,8 +76,6 @@ struct Initializer {
 			}
 		}
 
-		std::cout << "m_recombinationType " << individual.m_recombinationType << std::endl;
-
 		double sumOfWeights = 0;
 		double sumOfSquaredWeights = 0;
 		for (unsigned int i = 0; i < individual.m_weights.size(); i++) {
@@ -90,16 +87,9 @@ struct Initializer {
 		sumOfSquaredWeights /= sqr(sumOfWeights);
 		individual.m_muEff = 1. / sumOfSquaredWeights;
 
-		std::cout << "m_weights " << individual.m_weights << std::endl;
-		std::cout << "sumOfSquaredWeights " << sumOfSquaredWeights << std::endl;
-		std::cout << "m_muEff " << individual.m_muEff << std::endl;
-
 		// Step size control
 		individual.m_cSigma = (individual.m_muEff + 2.)/(numberOfVariables + individual.m_muEff + 5.);
 		individual.m_dSigma = 1. + 2. * std::max(0., ::sqrt((individual.m_muEff-1.)/(numberOfVariables+1)) - 1.) + individual.m_cSigma;
-
-		std::cout << "m_cSigma " << individual.m_cSigma << std::endl;
-		std::cout << "m_dSigma " << individual.m_dSigma << std::endl;
 
 		// Covariance matrix adaptation
 		switch (individual.m_updateType) {
@@ -112,8 +102,6 @@ struct Initializer {
 		case 2/*shark::cma::RANK_ONE_AND_MU*/:
 			break;
 		}
-
-		std::cout << "m_updateType " << individual.m_updateType << std::endl;
 
 		individual.m_cC = (4. + individual.m_muEff / numberOfVariables) / (4. + numberOfVariables + 2. * individual.m_muEff / numberOfVariables);
 		individual.m_cOne = 2 / (pow(numberOfVariables + 1.3, 2) + individual.m_muEff);
